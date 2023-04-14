@@ -1,0 +1,73 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  background: url("../../assets/img/bg-mobile-dark.jpg") no-repeat center;
+  background-size: cover;
+  z-index: -1;
+
+  &.light {
+    background: url("../../assets/img/bg-mobile-light.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .inner {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 48px 0 40px;
+    @include flex(space-between, center);
+
+    h1 {
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 15px;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+@include x-sm {
+  .header .inner {
+    max-width: 343px;
+  }
+}
+
+@include sm {
+  .header {
+    min-height: 300px;
+    background: url("../../assets/img/bg-desktop-dark.jpg") no-repeat center;
+    background-size: cover;
+
+    &.light {
+      background: url("../../assets/img/bg-desktop-light.jpg") no-repeat center;
+      background-size: cover;
+    }
+
+    .inner {
+      max-width: 540px;
+      padding: 70px 0 48px;
+
+      h1 {
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "./mixins" as *;
+
+.container {
+  max-width: 300px;
+  margin: 110px auto 0;
+
+  @include x-sm {
+    max-width: 343px;
+  }
+
+  @include sm {
+    max-width: 540px;
+    margin: 160px auto 0;
+  }
+}

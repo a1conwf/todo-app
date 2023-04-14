@@ -1,0 +1,98 @@
+@use "../../scss/mixins" as *;
+@use "../../scss/variables" as *;
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  border-bottom: 1px solid $veryDarkGrayishBlue-2;
+
+  input {
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #393a4b;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 12px;
+
+    &::after {
+      content: url("../../assets/svg/icon-check.svg");
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(40%, 35%);
+      display: none;
+    }
+
+    &:checked {
+      background: linear-gradient(135deg, $gradientStart 0%, $gradientEnd 100%);
+    }
+
+    &:checked::after {
+      display: block;
+    }
+  }
+
+  input:checked ~ label {
+    text-decoration: line-through;
+    color: $veryDarkGrayishBlue;
+  }
+
+  label {
+    color: $lightGrayishBlue;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  img {
+    width: 12px;
+    height: 12px;
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover img {
+    display: block;
+  }
+
+  &.light {
+    border-bottom: 1px solid $veryLightGrayishBlue;
+
+    input {
+      border: 1px solid #e3e4f1;
+    }
+
+    input:checked ~ label {
+      color: $lightGrayishBlue;
+    }
+
+    label {
+      color: $veryDarkGrayishBlue;
+    }
+  }
+}
+
+@include sm {
+  .todoItem {
+    padding: 20px 24px;
+
+    input {
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
+
+      &::after {
+        transform: translate(55%, 15%);
+      }
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

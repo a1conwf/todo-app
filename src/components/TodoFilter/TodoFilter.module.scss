@@ -1,0 +1,42 @@
+@use "../../scss/variables" as *;
+
+.todoFilter {
+  display: flex;
+  gap: 20px;
+
+  button {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: -0.19px;
+    color: #5b5e7e;
+
+    &.active {
+      color: $brightBlue;
+
+      &:hover {
+        color: $brightBlue;
+      }
+    }
+
+    &:hover {
+      color: #e3e4f1;
+    }
+  }
+
+  &.light button {
+    color: $darkGrayishBlue;
+
+    &.active {
+      color: $brightBlue;
+
+      &:hover {
+        color: $brightBlue;
+      }
+    }
+
+    &:hover {
+      color: $veryDarkGrayishBlue;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "./scss/mixins" as *;
+@use "./scss/variables" as *;
+@use "./scss/layout" as *;
+
+//Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+label,
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+label {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.17px;
+}
+
+body {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.17px;
+  font-weight: 400;
+  background-color: $veryDarkBlue;
+
+  &.light {
+    background-color: $white;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  background: url("./assets/img/bg-mobile-dark.jpg") no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}
+
+@include sm {
+  body {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.19px;
+  }
+
+  input,
+  label {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  .header {
+    min-height: 300px;
+    background: url("./assets/img/bg-desktop-dark.jpg") no-repeat center;
+    background-size: cover;
+  }
+}

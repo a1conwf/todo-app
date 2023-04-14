@@ -1,0 +1,116 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+.todoList {
+  max-height: 400px;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  background-color: $veryDarkDesaturatedBlue;
+  overflow: auto;
+  margin-bottom: 16px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $veryDarkDesaturatedBlue;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $veryDarkBlue;
+  }
+
+  .infoMsg {
+    padding: 24px 0 16px;
+    font-size: 16px;
+    color: $lightGrayishBlue;
+    text-align: center;
+  }
+
+  &.light {
+    background: $white;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+
+    &::-webkit-scrollbar {
+      background-color: $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $veryLightGrayishBlue;
+    }
+
+    .infoMsg {
+      color: $veryDarkGrayishBlue;
+    }
+  }
+}
+
+.todoFilterControl {
+  @include flex(space-between, center);
+  padding: 16px 20px;
+  color: #5b5e7e;
+
+  & > div {
+    display: none;
+  }
+
+  .clear {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.17px;
+    color: #5b5e7e;
+
+    &:hover {
+      color: #e3e4f1;
+    }
+  }
+
+  &.light {
+    color: $darkGrayishBlue;
+
+    .clear {
+      color: $darkGrayishBlue;
+
+      &:hover {
+        color: $veryDarkGrayishBlue;
+      }
+    }
+  }
+}
+
+.todoFilterControlMob {
+  @include flex(center, center);
+  padding: 15px 0;
+  background-color: $veryDarkDesaturatedBlue;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+
+  margin-bottom: 40px;
+
+  &.light {
+    background-color: $white;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  }
+}
+
+@include sm {
+  .todoList {
+    max-height: 450px;
+    margin-bottom: 50px;
+  }
+
+  .todoFilterControl {
+    padding: 20px 24px;
+
+    & > div {
+      display: flex;
+    }
+
+    .clear {
+      font-size: 14px;
+      line-height: 14px;
+      letter-spacing: -0.19px;
+    }
+  }
+
+  .todoFilterControlMob {
+    display: none;
+    margin-bottom: 0;
+  }
+}
