@@ -78,6 +78,7 @@ input[type="checkbox"] {
   border: 1px solid var(--color-border);
   border-radius: 50%;
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
 
   &::after {
     content: "";

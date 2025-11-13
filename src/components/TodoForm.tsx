@@ -35,7 +35,7 @@ const TodoForm: React.FC = () => {
       className="flex items-center bg-dark-blue transition duration-300 rounded-md border-border shadow-default pl-5 min-h-[48px] md:min-h-[64px] md:pl-6"
     >
       <div className="flex items-center flex-1 gap-3 md:gap-6 ">
-        <div className="w-5 h-5 border border-border rounded-full md:w-6 md:h-6"></div>
+        <div className="w-5 h-5 border border-border rounded-full transition-colors duration-300 md:w-6 md:h-6"></div>
         <input
           className="flex-1"
           ref={inputRef}

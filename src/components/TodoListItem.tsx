@@ -22,7 +22,7 @@ const TodoListItem: React.FC<TodoItem> = ({ id, title, isCompleted }) => {
   }, [id, removeTodo]);
 
   return (
-    <li className="flex items-center justify-between border-b border-border px-5 pb-5 md:px-6">
+    <li className="flex items-center justify-between border-b border-border px-5 pb-5 transition-colors duration-300 md:px-6">
       <div className="flex items-center gap-3 md:gap-6">
         <input
           className="w-5 h-5 md:w-6 md:h-6"
